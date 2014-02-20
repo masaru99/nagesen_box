@@ -9,7 +9,9 @@
 両方用意しないと投げ銭ができません。  
 コントローラーはiPhone用アプリ（iOS7以上対応）と、MacOSX用の２つです。  
 投げ銭BOXはMacOSX用アプリです。  
-こちらからダウンロードして下さい。  
+
+[こちらからダウンロードできます]: http://www.exeweb.net/app/nagesen.php
+
 
 #動作環境
  * MacOS X  
