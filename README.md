@@ -10,7 +10,7 @@
 コントローラーはiPhone用アプリ（iOS7以上対応）と、MacOSX用の２つです。  
 投げ銭BOXはMacOSX用アプリです。  
 
-[こちらからダウンロードできます]: http://www.exeweb.net/app/nagesen.php
+こちらからダウンロードできます → <http://www.exeweb.net/app/nagesen.php>
 
 
 #動作環境
