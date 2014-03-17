@@ -7,14 +7,20 @@
 
 「投げ銭コントローラー」と「投げ銭BOX」の二つからなり、  
 両方用意しないと投げ銭ができません。  
-コントローラーはiPhone用アプリ（iOS7以上対応）と、MacOSX用の２つです。  
-投げ銭BOXはMacOSX用アプリです。  
+現在コントローラーは以下の種類があります。
+	iPhone用アプリ（iOS7以上対応）
+	MacOSX用
+	PHP用
+	Python用（有志の方に作成頂きました）
+
+
+投げ銭BOXはMacOSX、Windowsの２つがあります。  
 
 こちらからダウンロードできます → <http://www.exeweb.net/app/nagesen.php>
 
 
 #動作環境
- * MacOS X  
+ * MacOS X or Windows 
  * コントローラーとBOXを必ず同じIP内にしてお使いください。  
  * ポートは「8999」を使用します。
 
