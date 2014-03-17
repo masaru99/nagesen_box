@@ -114,6 +114,7 @@ void testApp::update(){
     }
 }
 
+
 //--------------------------------------------------------------
 void testApp::draw(){
     
@@ -135,45 +136,11 @@ void testApp::draw(){
 
     }
     fbo.end();
-    // マウスボタンが押されていたら
-    if (mouseButtonState == "down" && nage == true) {
-        
-        //ofxBox2dCircle(円)クラスをインスタンス化
-        ofxBox2dCircle* circle = new ofxBox2dCircle();
-        
-        ofPoint pos; //タッチした座標を格納するための変数
-        pos.set(ofRandom(10, 300), 10); //タッチした場所を取得
-        
-        //半径を設定
-        float r = ofRandom(10, 30);
-        //物理パラメータを設定(重さ、反発力、摩擦力)
-        circle->setPhysics(3.0, 0.8, 0.8);
-        
-        //マウスの位置に円を設定
-        //circle->setup(box2d.getWorld(), pos.x, pos.y, r);
-        circle->setup(box2d.getWorld(), ofRandom(0, 1390), pos.y, r);
-        
-        //生成した円をcirclesに追加
-        circles.push_back(circle);
-        
-        //サウンド再生開始
-        mySound.play();
-        
-        mouseButtonState = "up";
-        
-        // コイン枚数カウント
-        num = num + 10;
-        
-        // 1up処理
-        if((num % 100) == 0){
-            sound1up.play();
-        }
-        // LevelUP処理
-        if((num % 1000) == 0){
-            levelup.play();
-        }
-        
-    }
+    
+    
+    // 銭を投げる
+    nageru();
+    
     
         //======================== get our quad warp matrix.
         
@@ -217,8 +184,74 @@ void testApp::draw(){
     // wrap描画
     warper2.draw();
     warper.draw();
-
 }
+
+
+//--------------------------------------------------------------
+void testApp::nageru() {
+    // マウスボタンが押されていたら
+    if (
+        mouseButtonState == "y10" ||
+        mouseButtonState == "y100" ||
+        mouseButtonState == "aoriyen" ||
+        mouseButtonState == "down"
+        
+    ) {
+        if(nage == true){
+            //ofxBox2dCircle(円)クラスをインスタンス化
+            ofxBox2dCircle* circle = new ofxBox2dCircle();
+            
+            ofPoint pos; //タッチした座標を格納するための変数
+            pos.set(ofRandom(10, 300), 10); //タッチした場所を取得
+            
+            //半径を設定
+            float r = ofRandom(10, 30);
+            //物理パラメータを設定(重さ、反発力、摩擦力)
+            circle->setPhysics(3.0, 0.8, 0.8);
+            
+            //マウスの位置に円を設定
+            //circle->setup(box2d.getWorld(), pos.x, pos.y, r);
+            circle->setup(box2d.getWorld(), ofRandom(0, 1390), pos.y, r, false, mouseButtonState);
+            
+            //生成した円をcirclesに追加
+            circles.push_back(circle);
+            
+            //サウンド再生開始
+            mySound.play();
+            
+            // お金
+            if(mouseButtonState == "y100") {
+                postyen = 100;
+            } else if(mouseButtonState == "y10") {
+                postyen = 10;
+            } else if(mouseButtonState == "aoriyen") {
+                postyen = 0;
+            } else {
+                postyen = 10;
+            } // if
+            
+            // コイン枚数カウント
+            num = num + postyen;
+            
+            // 待ち受けに戻す
+            mouseButtonState = "up";
+            
+            // 1up処理
+            //up1Num += postyen;
+            if((num % 1000) < 100){
+                if(mouseButtonState != "aoriyen") {
+                    if(up1){
+                        if(num != 10){ sound1up.play(); }
+                        up1 = false;
+                    }
+                }
+            } else {
+                up1 = true;
+            }
+        }
+    }
+}
+
 
 //--------------------------------------------------------------
 void testApp::exit(){
@@ -258,7 +291,6 @@ void testApp::keyReleased(int key){
     
     // 見えているコインだけリセット
     if (key == 'x'){
-        
         //circles配列の全ての要素を消去する(イテレータ使用)
         for(vector <ofxBox2dCircle *>::iterator it = circles.begin(); it != circles.end();){
             (*it)->destroyShape();
@@ -297,37 +329,9 @@ void testApp::mousePressed(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::mouseReleased(int x, int y, int button){
     
-    if(nage == true) {
-    
-    //ofxBox2dCircle(円)クラスをインスタンス化
-    ofxBox2dCircle* circle = new ofxBox2dCircle();
-    
-    ofPoint pos; //タッチした座標を格納するための変数
-    pos.set(mouseX, mouseY); //タッチした場所を取得
-    
-    //半径を設定
-    float r = ofRandom(10, 30);
-    //物理パラメータを設定(重さ、反発力、摩擦力)
-    circle->setPhysics(1.0, 0.8, 0.5);
-    //マウスの位置に円を設定
-    circle->setup(box2d.getWorld(), pos.x, pos.y, r);
-    //生成した円をcirclesに追加
-    circles.push_back(circle);
-    
-    
-    mySound.play(); //サウンド再生開始
-    
-    num = num+10; // コイン枚数カウント
-    
-    if((num % 100) == 0){
-        sound1up.play();
-    }
-    // LevelUP処理
-    if((num % 1000) == 0){
-        levelup.play();
-    }
-    
-    }
+    // 銭を投げる
+    mouseButtonState = "y10";
+    nageru();
 }
 
 //--------------------------------------------------------------

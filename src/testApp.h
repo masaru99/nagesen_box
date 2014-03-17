@@ -18,6 +18,8 @@ public:
     void draw();
     void exit();
     
+    void nageru();
+    
     void keyPressed  (int key);
     void keyReleased(int key);
     void mouseMoved(int x, int y );
@@ -57,6 +59,8 @@ public:
     
     // お金カウント
     int num;
+    int up1Num = 0;
+    bool up1 = true;
     
     // 文字
     ofTrueTypeFont font;
@@ -68,7 +72,9 @@ public:
     ofPoint p1, p2, p3;
     ofRectangle rect1, rect2, rect3;
     vector<ofPath> characters;
-
+    float postyen;
+    
+    
     // マニュアル
     ofxTrueTypeFontUC manual;
     string manualString;
@@ -80,6 +86,7 @@ public:
   
     // 投げ受付
     bool nage = false;
+    
     
     // プロジェクションマッピング
     ofxQuadWarp         warper;
