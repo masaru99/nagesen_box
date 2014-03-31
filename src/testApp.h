@@ -5,6 +5,7 @@
 #include "ofxBox2d.h"
 #include "ofxOsc.h"
 #include "ofxQuadWarp.h"
+#include "ofxJSONElement.h"
 
 
 // OSCを受信するポート番号を設定
@@ -87,6 +88,20 @@ public:
     // 投げ受付
     bool nage = false;
     
+    // Json用
+    ofxJSONElement response;
+
+    // Json：枚数
+    float count;
+    string type;
+    
+    
+    // Jsonからの銭枚数
+    float etime;
+    float rtime;
+    
+    // 秒
+    int s;
     
     // プロジェクションマッピング
     ofxQuadWarp         warper;

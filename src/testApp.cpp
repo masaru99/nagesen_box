@@ -82,11 +82,34 @@ void testApp::setup(){
     // ラインを消す
     warper.toggleShow();
     warper2.toggleShow();
+
+    //秒の取得
+    s = ofGetSeconds();
+    
+    // jsonを読みにいく
+    //if(time > 30) {
+        bool result = response.open("http://www.exeweb.net/nagesen/server/rooms/fetch/1");
+        if(!result) {
+            //cout << "faild to get JSON data!" << endl;
+        } else {
+            cout << response.getRawString() << endl;
+        }
+    //}
+
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-    
+    //etime = ofToInt(ofGetElapsedTimeMillis());
+    //float etime2 = ofToFloat(etime);
+    //ofToFloat
+    if((ofGetElapsedTimeMillis() % 1000) <= 1) {
+        rtime = 0;
+    } else {
+        rtime++;
+    }
+
+
     //Box2Dの物理演算を実行
     box2d.update();
     
@@ -133,6 +156,30 @@ void testApp::draw(){
         for(vector <ofxBox2dCircle *>::iterator it = circles.begin(); it != circles.end(); ++it) {
         (*it)->draw();
         }
+        
+
+        // 定期的に銭カウントをサーバーに見に行く
+        if(rtime == 0){
+            // サーバーに見に行く
+            bool result = response.open("http://www.exeweb.net/nagesen/server/rooms/fetch/1");
+            count = response["queues"]["count"].asFloat();
+            
+            // コイン投げる
+            for(int i=0; i < count; i++){
+                //cout << response["queues"]["coins"][i]["type"].asString() << endl;
+                type = response["queues"]["coins"][i]["type"].asString();
+                nageru();
+            }
+            // リセット
+            response.open("http://www.exeweb.net/nagesen/server/rooms/reset/1");
+            type = "";
+        }
+        
+        // デバッグ
+        ofDrawBitmapString(ofToString(count), 300 , 100);
+        ofDrawBitmapString(ofToString(rtime), 300 , 140);
+        // ofDrawBitmapString(ofToString(ofGetElapsedTimeMillis()), 300 , 140);
+        // ofDrawBitmapString(ofToString(ofGetElapsedTimeMillis() % 3000), 300 , 160);
 
     }
     fbo.end();
@@ -189,6 +236,11 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::nageru() {
+    
+    mouseButtonState = type;
+    //cout << "start" << endl;
+    //cout << type << endl;
+    //cout << "end" << endl;
     // マウスボタンが押されていたら
     if (
         mouseButtonState == "y10" ||

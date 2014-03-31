@@ -27,15 +27,11 @@
 		5864ad82e20f15536d054ea319473de3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = df49d76c45d5db505a234880104e4dc7 /* ofxOscMessage.cpp */; };
 		62545d179c94265ca1389d4ac8d694a5 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */; };
 		640279ee111671bd026cb0137d5b121e /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c2fac65c491d4231379f3298ec59c6e9 /* ofxOscReceiver.cpp */; };
-		65251DAD186F597200FE6CA4 /* libhttp_parser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65251DA1186F597200FE6CA4 /* libhttp_parser.a */; };
-		65251DAE186F597200FE6CA4 /* libnode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65251DA2186F597200FE6CA4 /* libnode.a */; };
-		65251DAF186F597200FE6CA4 /* libv8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65251DA3186F597200FE6CA4 /* libv8.a */; };
-		65251DB0186F597200FE6CA4 /* libv8preparser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65251DA4186F597200FE6CA4 /* libv8preparser.a */; };
-		65251DB1186F597200FE6CA4 /* uv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65251DA5186F597200FE6CA4 /* uv.a */; };
-		65251DB2186F597200FE6CA4 /* ofxNodejs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65251DA7186F597200FE6CA4 /* ofxNodejs.cpp */; };
-		65251DB3186F597200FE6CA4 /* ofxNodejsFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65251DA9186F597200FE6CA4 /* ofxNodejsFunction.cpp */; };
-		65251DB4186F597200FE6CA4 /* ofxNodejsObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65251DAB186F597200FE6CA4 /* ofxNodejsObject.cpp */; };
 		6555519E18B4D8DB00260532 /* ofxTrueTypeFontUC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6555519718B4D8DB00260532 /* ofxTrueTypeFontUC.cpp */; };
+		65CE814918E7FD57008639E2 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65CE813018E7FD57008639E2 /* json_reader.cpp */; };
+		65CE814A18E7FD57008639E2 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65CE813218E7FD57008639E2 /* json_value.cpp */; };
+		65CE814B18E7FD57008639E2 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65CE813418E7FD57008639E2 /* json_writer.cpp */; };
+		65CE814C18E7FD57008639E2 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65CE813818E7FD57008639E2 /* ofxJSONElement.cpp */; };
 		65DD679C18AA086500F325E0 /* ofxQuadWarp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65DD679318AA086500F325E0 /* ofxQuadWarp.cpp */; };
 		65DD681F18AA09A200F325E0 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DD680B18AA09A200F325E0 /* opencv.a */; };
 		65DD682018AA09A200F325E0 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65DD680E18AA09A200F325E0 /* ofxCvColorImage.cpp */; };
@@ -182,43 +178,31 @@
 		59a458bc678d38d0182a1d2ce3b7d62f /* b2PolyAndCircleContact.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2PolyAndCircleContact.h; path = ../../../addons/ofxBox2d/src/lib/Box2D/Source/Dynamics/Contacts/b2PolyAndCircleContact.h; sourceTree = SOURCE_ROOT; };
 		5d231832976053c4a68ea6def094426a /* b2BroadPhase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = b2BroadPhase.h; path = ../../../addons/ofxBox2d/src/lib/Box2D/Source/Collision/b2BroadPhase.h; sourceTree = SOURCE_ROOT; };
 		63a47ac60ffafc3bf093ec0f62a9a4d4 /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
-		65251D8A186F597200FE6CA4 /* ares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares.h; sourceTree = "<group>"; };
-		65251D8B186F597200FE6CA4 /* ares_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_version.h; sourceTree = "<group>"; };
-		65251D8C186F597200FE6CA4 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		65251D8D186F597200FE6CA4 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
-		65251D8E186F597200FE6CA4 /* node_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_buffer.h; sourceTree = "<group>"; };
-		65251D8F186F597200FE6CA4 /* node_object_wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_object_wrap.h; sourceTree = "<group>"; };
-		65251D90186F597200FE6CA4 /* node_stat_watcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_stat_watcher.h; sourceTree = "<group>"; };
-		65251D92186F597200FE6CA4 /* eio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eio.h; sourceTree = "<group>"; };
-		65251D93186F597200FE6CA4 /* ev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ev.h; sourceTree = "<group>"; };
-		65251D94186F597200FE6CA4 /* ngx-queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ngx-queue.h"; sourceTree = "<group>"; };
-		65251D95186F597200FE6CA4 /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
-		65251D96186F597200FE6CA4 /* uv-unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uv-unix.h"; sourceTree = "<group>"; };
-		65251D97186F597200FE6CA4 /* uv-win.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uv-win.h"; sourceTree = "<group>"; };
-		65251D98186F597200FE6CA4 /* uv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uv.h; sourceTree = "<group>"; };
-		65251D99186F597200FE6CA4 /* v8-debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-debug.h"; sourceTree = "<group>"; };
-		65251D9A186F597200FE6CA4 /* v8-preparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-preparser.h"; sourceTree = "<group>"; };
-		65251D9B186F597200FE6CA4 /* v8-profiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-profiler.h"; sourceTree = "<group>"; };
-		65251D9C186F597200FE6CA4 /* v8-testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "v8-testing.h"; sourceTree = "<group>"; };
-		65251D9D186F597200FE6CA4 /* v8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v8.h; sourceTree = "<group>"; };
-		65251D9E186F597200FE6CA4 /* v8stdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v8stdint.h; sourceTree = "<group>"; };
-		65251DA1186F597200FE6CA4 /* libhttp_parser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhttp_parser.a; sourceTree = "<group>"; };
-		65251DA2186F597200FE6CA4 /* libnode.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnode.a; sourceTree = "<group>"; };
-		65251DA3186F597200FE6CA4 /* libv8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8.a; sourceTree = "<group>"; };
-		65251DA4186F597200FE6CA4 /* libv8preparser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libv8preparser.a; sourceTree = "<group>"; };
-		65251DA5186F597200FE6CA4 /* uv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = uv.a; sourceTree = "<group>"; };
-		65251DA7186F597200FE6CA4 /* ofxNodejs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxNodejs.cpp; sourceTree = "<group>"; };
-		65251DA8186F597200FE6CA4 /* ofxNodejs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNodejs.h; sourceTree = "<group>"; };
-		65251DA9186F597200FE6CA4 /* ofxNodejsFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxNodejsFunction.cpp; sourceTree = "<group>"; };
-		65251DAA186F597200FE6CA4 /* ofxNodejsFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNodejsFunction.h; sourceTree = "<group>"; };
-		65251DAB186F597200FE6CA4 /* ofxNodejsObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxNodejsObject.cpp; sourceTree = "<group>"; };
-		65251DAC186F597200FE6CA4 /* ofxNodejsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxNodejsObject.h; sourceTree = "<group>"; };
 		6555519218B4D8DB00260532 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		6555519318B4D8DB00260532 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		6555519418B4D8DB00260532 /* ofxaddons_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ofxaddons_thumbnail.png; sourceTree = "<group>"; };
 		6555519518B4D8DB00260532 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6555519718B4D8DB00260532 /* ofxTrueTypeFontUC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTrueTypeFontUC.cpp; sourceTree = "<group>"; };
 		6555519818B4D8DB00260532 /* ofxTrueTypeFontUC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTrueTypeFontUC.h; sourceTree = "<group>"; };
+		65CE812418E7FD57008639E2 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		65CE812518E7FD57008639E2 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		65CE812618E7FD57008639E2 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
+		65CE812718E7FD57008639E2 /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
+		65CE812818E7FD57008639E2 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		65CE812918E7FD57008639E2 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		65CE812A18E7FD57008639E2 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		65CE812B18E7FD57008639E2 /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		65CE812D18E7FD57008639E2 /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_batchallocator.h; sourceTree = "<group>"; };
+		65CE812E18E7FD57008639E2 /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalarray.inl; sourceTree = "<group>"; };
+		65CE812F18E7FD57008639E2 /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalmap.inl; sourceTree = "<group>"; };
+		65CE813018E7FD57008639E2 /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_reader.cpp; sourceTree = "<group>"; };
+		65CE813118E7FD57008639E2 /* json_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_tool.h; sourceTree = "<group>"; };
+		65CE813218E7FD57008639E2 /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_value.cpp; sourceTree = "<group>"; };
+		65CE813318E7FD57008639E2 /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_valueiterator.inl; sourceTree = "<group>"; };
+		65CE813418E7FD57008639E2 /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
+		65CE813518E7FD57008639E2 /* sconscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sconscript; sourceTree = "<group>"; };
+		65CE813818E7FD57008639E2 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxJSONElement.cpp; sourceTree = "<group>"; };
+		65CE813918E7FD57008639E2 /* ofxJSONElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxJSONElement.h; sourceTree = "<group>"; };
 		65DD679118AA086500F325E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		65DD679318AA086500F325E0 /* ofxQuadWarp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxQuadWarp.cpp; sourceTree = "<group>"; };
 		65DD679418AA086500F325E0 /* ofxQuadWarp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxQuadWarp.h; sourceTree = "<group>"; };
@@ -442,9 +426,7 @@
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
-				65251DAF186F597200FE6CA4 /* libv8.a in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
-				65251DAE186F597200FE6CA4 /* libnode.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
 				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
@@ -454,13 +436,10 @@
 				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
 				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
 				65DD681F18AA09A200F325E0 /* opencv.a in Frameworks */,
-				65251DB1186F597200FE6CA4 /* uv.a in Frameworks */,
 				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
-				65251DB0186F597200FE6CA4 /* libv8preparser.a in Frameworks */,
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
-				65251DAD186F597200FE6CA4 /* libhttp_parser.a in Frameworks */,
 				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,101 +553,6 @@
 			name = posix;
 			sourceTree = "<group>";
 		};
-		65251D86186F597200FE6CA4 /* ofxNodejs */ = {
-			isa = PBXGroup;
-			children = (
-				65251D87186F597200FE6CA4 /* libs */,
-				65251DA6186F597200FE6CA4 /* src */,
-			);
-			name = ofxNodejs;
-			path = ../../../addons/ofxNodejs;
-			sourceTree = "<group>";
-		};
-		65251D87186F597200FE6CA4 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				65251D88186F597200FE6CA4 /* node */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		65251D88186F597200FE6CA4 /* node */ = {
-			isa = PBXGroup;
-			children = (
-				65251D89186F597200FE6CA4 /* include */,
-				65251D9F186F597200FE6CA4 /* lib */,
-			);
-			path = node;
-			sourceTree = "<group>";
-		};
-		65251D89186F597200FE6CA4 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				65251D8A186F597200FE6CA4 /* ares.h */,
-				65251D8B186F597200FE6CA4 /* ares_version.h */,
-				65251D8C186F597200FE6CA4 /* config.h */,
-				65251D8D186F597200FE6CA4 /* node.h */,
-				65251D8E186F597200FE6CA4 /* node_buffer.h */,
-				65251D8F186F597200FE6CA4 /* node_object_wrap.h */,
-				65251D90186F597200FE6CA4 /* node_stat_watcher.h */,
-				65251D91186F597200FE6CA4 /* uv-private */,
-				65251D98186F597200FE6CA4 /* uv.h */,
-				65251D99186F597200FE6CA4 /* v8-debug.h */,
-				65251D9A186F597200FE6CA4 /* v8-preparser.h */,
-				65251D9B186F597200FE6CA4 /* v8-profiler.h */,
-				65251D9C186F597200FE6CA4 /* v8-testing.h */,
-				65251D9D186F597200FE6CA4 /* v8.h */,
-				65251D9E186F597200FE6CA4 /* v8stdint.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		65251D91186F597200FE6CA4 /* uv-private */ = {
-			isa = PBXGroup;
-			children = (
-				65251D92186F597200FE6CA4 /* eio.h */,
-				65251D93186F597200FE6CA4 /* ev.h */,
-				65251D94186F597200FE6CA4 /* ngx-queue.h */,
-				65251D95186F597200FE6CA4 /* tree.h */,
-				65251D96186F597200FE6CA4 /* uv-unix.h */,
-				65251D97186F597200FE6CA4 /* uv-win.h */,
-			);
-			path = "uv-private";
-			sourceTree = "<group>";
-		};
-		65251D9F186F597200FE6CA4 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				65251DA0186F597200FE6CA4 /* osx */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		65251DA0186F597200FE6CA4 /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				65251DA1186F597200FE6CA4 /* libhttp_parser.a */,
-				65251DA2186F597200FE6CA4 /* libnode.a */,
-				65251DA3186F597200FE6CA4 /* libv8.a */,
-				65251DA4186F597200FE6CA4 /* libv8preparser.a */,
-				65251DA5186F597200FE6CA4 /* uv.a */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		65251DA6186F597200FE6CA4 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				65251DA7186F597200FE6CA4 /* ofxNodejs.cpp */,
-				65251DA8186F597200FE6CA4 /* ofxNodejs.h */,
-				65251DA9186F597200FE6CA4 /* ofxNodejsFunction.cpp */,
-				65251DAA186F597200FE6CA4 /* ofxNodejsFunction.h */,
-				65251DAB186F597200FE6CA4 /* ofxNodejsObject.cpp */,
-				65251DAC186F597200FE6CA4 /* ofxNodejsObject.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		6555518C18B4D8DB00260532 /* ofxTrueTypeFontUC */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +571,81 @@
 			children = (
 				6555519718B4D8DB00260532 /* ofxTrueTypeFontUC.cpp */,
 				6555519818B4D8DB00260532 /* ofxTrueTypeFontUC.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		65CE80D318E7FD56008639E2 /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812018E7FD57008639E2 /* libs */,
+				65CE813718E7FD57008639E2 /* src */,
+			);
+			name = ofxJSON;
+			path = ../../../addons/ofxJSON;
+			sourceTree = "<group>";
+		};
+		65CE812018E7FD57008639E2 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812118E7FD57008639E2 /* jsoncpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		65CE812118E7FD57008639E2 /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812218E7FD57008639E2 /* include */,
+				65CE812C18E7FD57008639E2 /* src */,
+			);
+			path = jsoncpp;
+			sourceTree = "<group>";
+		};
+		65CE812218E7FD57008639E2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812318E7FD57008639E2 /* json */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		65CE812318E7FD57008639E2 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812418E7FD57008639E2 /* autolink.h */,
+				65CE812518E7FD57008639E2 /* config.h */,
+				65CE812618E7FD57008639E2 /* features.h */,
+				65CE812718E7FD57008639E2 /* forwards.h */,
+				65CE812818E7FD57008639E2 /* json.h */,
+				65CE812918E7FD57008639E2 /* reader.h */,
+				65CE812A18E7FD57008639E2 /* value.h */,
+				65CE812B18E7FD57008639E2 /* writer.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		65CE812C18E7FD57008639E2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				65CE812D18E7FD57008639E2 /* json_batchallocator.h */,
+				65CE812E18E7FD57008639E2 /* json_internalarray.inl */,
+				65CE812F18E7FD57008639E2 /* json_internalmap.inl */,
+				65CE813018E7FD57008639E2 /* json_reader.cpp */,
+				65CE813118E7FD57008639E2 /* json_tool.h */,
+				65CE813218E7FD57008639E2 /* json_value.cpp */,
+				65CE813318E7FD57008639E2 /* json_valueiterator.inl */,
+				65CE813418E7FD57008639E2 /* json_writer.cpp */,
+				65CE813518E7FD57008639E2 /* sconscript */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		65CE813718E7FD57008639E2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				65CE813818E7FD57008639E2 /* ofxJSONElement.cpp */,
+				65CE813918E7FD57008639E2 /* ofxJSONElement.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1130,11 +1089,11 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				65CE80D318E7FD56008639E2 /* ofxJSON */,
 				6555518C18B4D8DB00260532 /* ofxTrueTypeFontUC */,
 				65DD682718AA0A6A00F325E0 /* ofxMSAInteractiveObject */,
 				65DD67A318AA09A100F325E0 /* ofxOpenCv */,
 				65DD675C18AA086400F325E0 /* ofxQuadWarp */,
-				65251D86186F597200FE6CA4 /* ofxNodejs */,
 				e6053ab7fec63d5f83825b880ce53c41 /* ofxOsc */,
 				bd1b24c549bfa7d54bc59de3c6921b7c /* ofxBox2d */,
 			);
@@ -1387,6 +1346,7 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				72a929d3561b8232a182abfcbb325491 /* ofxOscBundle.cpp in Sources */,
 				5864ad82e20f15536d054ea319473de3 /* ofxOscMessage.cpp in Sources */,
+				65CE814A18E7FD57008639E2 /* json_value.cpp in Sources */,
 				640279ee111671bd026cb0137d5b121e /* ofxOscReceiver.cpp in Sources */,
 				8f5205aef8861ef234f0651aba6be2ee /* ofxOscSender.cpp in Sources */,
 				ade367465d2a8ebad4c7a8d92a3ef718 /* IpEndpointName.cpp in Sources */,
@@ -1396,12 +1356,14 @@
 				a29d8c96ae042eceaa1bd4f3cbbf0c9d /* NetworkingUtilsWin.cpp in Sources */,
 				65DD682118AA09A200F325E0 /* ofxCvContourFinder.cpp in Sources */,
 				65DD682418AA09A200F325E0 /* ofxCvHaarFinder.cpp in Sources */,
+				65CE814918E7FD57008639E2 /* json_reader.cpp in Sources */,
+				65CE814C18E7FD57008639E2 /* ofxJSONElement.cpp in Sources */,
 				28090deb5109115003e8f1c540f04092 /* UdpSocketWin.cpp in Sources */,
 				62545d179c94265ca1389d4ac8d694a5 /* OscOutboundPacketStream.cpp in Sources */,
 				c4782ecc372420ace0615b749e1d0d6b /* OscPrintReceivedElements.cpp in Sources */,
 				0546d1a38e13bd319cc9755b5ca7e1a0 /* OscReceivedElements.cpp in Sources */,
+				65CE814B18E7FD57008639E2 /* json_writer.cpp in Sources */,
 				65DD682E18AA0A6A00F325E0 /* ofxMSAInteractiveObject.cpp in Sources */,
-				65251DB2186F597200FE6CA4 /* ofxNodejs.cpp in Sources */,
 				879a251454401bc0b6e4f238fc63135b /* OscTypes.cpp in Sources */,
 				a77d9026190eccaf950fc1e70cfe1e1b /* b2BroadPhase.cpp in Sources */,
 				043ed5e7c97875b49a92d332e1953aa6 /* b2CollideCircle.cpp in Sources */,
@@ -1410,7 +1372,6 @@
 				2bd73cb0e0bf5d817ce2f993cc5bd093 /* b2Distance.cpp in Sources */,
 				88310d2eb920e45de627ab1448ab0b49 /* b2PairManager.cpp in Sources */,
 				92742eb59660437dde7fbd5a6cd4ce7d /* b2TimeOfImpact.cpp in Sources */,
-				65251DB4186F597200FE6CA4 /* ofxNodejsObject.cpp in Sources */,
 				01e103049f333f033c43dad7bfedd650 /* b2CircleShape.cpp in Sources */,
 				8fa63aaf415d1eed4d42a5a9c5133767 /* b2EdgeShape.cpp in Sources */,
 				20620256b830dd8f6b512ee403947e36 /* b2PolygonShape.cpp in Sources */,
@@ -1436,7 +1397,6 @@
 				9fca7f5e221be8061920cfad0414db18 /* b2PolyAndEdgeContact.cpp in Sources */,
 				df79c7dc9568dcaa7fc896e86bdb8464 /* b2PolyContact.cpp in Sources */,
 				24f85f1295140808245afc64d60b4175 /* b2BuoyancyController.cpp in Sources */,
-				65251DB3186F597200FE6CA4 /* ofxNodejsFunction.cpp in Sources */,
 				f5f0d8d9dc24159be0cabc0b01192dec /* b2ConstantAccelController.cpp in Sources */,
 				8e18bb8bfa37ec5ab764f4d92dc8ae20 /* b2ConstantForceController.cpp in Sources */,
 				494272b9814152b1794949ac72409cf1 /* b2Controller.cpp in Sources */,
@@ -1637,6 +1597,7 @@
 					../../../addons/ofxFTGL/libs,
 					../../../addons/ofxTrueTypeFontUC/libs,
 					../../../addons/ofxTrueTypeFontUC/src,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
 				);
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
