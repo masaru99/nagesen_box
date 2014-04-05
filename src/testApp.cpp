@@ -100,15 +100,18 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-    //etime = ofToInt(ofGetElapsedTimeMillis());
-    //float etime2 = ofToFloat(etime);
-    //ofToFloat
-    if((ofGetElapsedTimeMillis() % 1000) <= 1) {
+    
+    //一定間隔ごとにサーバーを見に行く
+    if (etime > 500) {
+        // リセット
         rtime = 0;
+        etime = 0;
     } else {
         rtime++;
     }
-
+    //年齢を追加
+    etime++;
+    
 
     //Box2Dの物理演算を実行
     box2d.update();
