@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4163C4D3-2B46-4059-B7FF-15F67AD6CE8A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>140405_nagesenboxn</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5130C4AD-8E8F-4EB7-940E-9A497C45EDC2</key>
+		<string>https://github.com/masaru99/nagesen_box.git</string>
+		<key>924F3E93-058C-4831-B689-ABB3E6BFD7AF</key>
+		<string>http://vanderlin.googlecode.com/svn/trunk/openframeworks/addons/ofxBox2d</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>140405_nagesenboxn.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5130C4AD-8E8F-4EB7-940E-9A497C45EDC2</key>
+		<string>../..</string>
+		<key>924F3E93-058C-4831-B689-ABB3E6BFD7AF</key>
+		<string>../../../../../addons/ofxBox2d</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>924F3E93-058C-4831-B689-ABB3E6BFD7AF</key>
+		<string>http://vanderlin.googlecode.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/masaru99/nagesen_box.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5130C4AD-8E8F-4EB7-940E-9A497C45EDC2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5130C4AD-8E8F-4EB7-940E-9A497C45EDC2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nagesen_box</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>924F3E93-058C-4831-B689-ABB3E6BFD7AF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxBox2d</string>
+		</dict>
+	</array>
+</dict>
+</plist>

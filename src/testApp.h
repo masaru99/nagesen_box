@@ -6,6 +6,7 @@
 #include "ofxOsc.h"
 #include "ofxQuadWarp.h"
 #include "ofxJSONElement.h"
+#include "ofxUI.h"
 
 
 // OSCを受信するポート番号を設定
@@ -89,16 +90,28 @@ public:
     bool nage = false;
     
     // Json用
-    ofxJSONElement response;
+    ofxJSONElement response_server;
+    ofxJSONElement response_room;
 
     // Json：枚数
     float count;
+    float roomcount;
     string type;
     
     
     // Jsonからの銭枚数
     float etime;
     float rtime;
+    
+    // サーバー情報
+    string serverurl     = "http://www.exeweb.net/nagesen/server/rooms/json_serverinfo/";
+    string roomurl       = "http://www.exeweb.net/nagesen/server/rooms/fetch/";
+    string roomreseturl  = "http://www.exeweb.net/nagesen/server/rooms/reset/";
+    int serverinfo;
+    int serverId;
+    int serverIdGui;
+    string serverName;
+    string serverAddress;
     
     // 秒
     int s;
@@ -116,4 +129,11 @@ public:
     int y = 0;
     int x2 = 20;
     int y2 = 20;
+    
+    
+    // UI
+    void setGUI1();
+    ofxUICanvas *gui;
+    void guiEvent(ofxUIEventArgs &e); // イベント
+
 };

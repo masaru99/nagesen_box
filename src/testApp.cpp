@@ -3,13 +3,15 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    
+
     //背景
     ofSetBackgroundAuto(true);
     ofBackground(0, 0, 0);
     ofSetFrameRate(60);
     //ofSetFullscreen(true);
+    ofSetWindowTitle("投げ銭BOX ver.0.4");
 
+    // 要素の位置決め
     int w = 1300;
     int h = ofGetHeight() - 40;
     int w2 = 240;
@@ -55,7 +57,6 @@ void testApp::setup(){
     p2 = ofPoint(200, 300);
     p3 = ofPoint(300, 400);
     
-    
     num = 0;
     
     // BOX（実際の表示）
@@ -87,20 +88,32 @@ void testApp::setup(){
     s = ofGetSeconds();
     
     // jsonを読みにいく
-    //if(time > 30) {
-        bool result = response.open("http://www.exeweb.net/nagesen/server/rooms/fetch/1");
-        if(!result) {
-            //cout << "faild to get JSON data!" << endl;
-        } else {
-            cout << response.getRawString() << endl;
-        }
-    //}
-
+    bool result = response_server.open(serverurl);
+    if(!result) {
+        cout << "faild to get JSON data!" << endl;
+    } else {
+        //cout << response.getRawString() << endl;
+        // サーバーに登録されているBOX数を拾う
+        roomcount = response_server["roomcount"].asFloat();
+    } // if
+    
+    // UIの設定
+    gui = new ofxUICanvas((ofGetWidth()-350), 0, ofGetWidth(), 300);
+    vector<string> names;
+    for(int i=0; i < roomcount; i++){
+        names.push_back(response_server["rooms"][i]["name_en"].asString());
+    }
+    gui->addLabel("PLEASE SELECT SERVER !");
+    gui->addSpacer(255-OFX_UI_GLOBAL_WIDGET_SPACING, 2);
+	gui->addRadio("RADIO VERTICAL", names, OFX_UI_ORIENTATION_VERTICAL, 64, 64);
+    ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     
+    // 投げモードなら
+    if(nage == true){
     //一定間隔ごとにサーバーを見に行く
     if (etime > 500) {
         // リセット
@@ -111,6 +124,7 @@ void testApp::update(){
     }
     //年齢を追加
     etime++;
+    } // if
     
 
     //Box2Dの物理演算を実行
@@ -143,7 +157,7 @@ void testApp::update(){
 
 //--------------------------------------------------------------
 void testApp::draw(){
-    
+
     time++;
     
     // wrapする
@@ -160,29 +174,35 @@ void testApp::draw(){
         (*it)->draw();
         }
         
-
+        // 投げモードなら
+        if(nage == true){
         // 定期的に銭カウントをサーバーに見に行く
         if(rtime == 0){
             // サーバーに見に行く
-            bool result = response.open("http://www.exeweb.net/nagesen/server/rooms/fetch/1");
-            count = response["queues"]["count"].asFloat();
-            
+            serverAddress = ofToString(response_server["rooms"][serverId-1]["id"]);
+            string preServerId = serverAddress;
+            bool result = response_room.open(roomurl + ofToString(preServerId));
+            count = response_room["count"].asFloat();
+
             // コイン投げる
+            if(count != 0) {
             for(int i=0; i < count; i++){
-                //cout << response["queues"]["coins"][i]["type"].asString() << endl;
-                type = response["queues"]["coins"][i]["type"].asString();
+                type = response_room["coins"][i]["type"].asString();
                 nageru();
-            }
-            // リセット
-            response.open("http://www.exeweb.net/nagesen/server/rooms/reset/1");
-            type = "";
-        }
+            } // for
+                // リセット
+                response_room.open(roomreseturl + preServerId);
+                type = "";
+            } // if
+        } // if
+        } // if
         
         // デバッグ
-        ofDrawBitmapString(ofToString(count), 300 , 100);
-        ofDrawBitmapString(ofToString(rtime), 300 , 140);
-        // ofDrawBitmapString(ofToString(ofGetElapsedTimeMillis()), 300 , 140);
-        // ofDrawBitmapString(ofToString(ofGetElapsedTimeMillis() % 3000), 300 , 160);
+        //ofDrawBitmapString(ofToString(count), 20 , 100);
+        //ofDrawBitmapString(ofToString(rtime), 20 , 120);
+        
+        // 現在のサーバー
+        ofDrawBitmapString(ofToString(response_server["rooms"][serverIdGui]["name_en"]), (ofGetWidth()/2)-100, 20);
 
     }
     fbo.end();
@@ -241,9 +261,6 @@ void testApp::draw(){
 void testApp::nageru() {
     
     mouseButtonState = type;
-    //cout << "start" << endl;
-    //cout << type << endl;
-    //cout << "end" << endl;
     // マウスボタンが押されていたら
     if (
         mouseButtonState == "y10" ||
@@ -310,7 +327,7 @@ void testApp::nageru() {
 
 //--------------------------------------------------------------
 void testApp::exit(){
-    
+    delete gui;
 }
 
 //--------------------------------------------------------------
@@ -336,11 +353,12 @@ void testApp::keyReleased(int key){
         if(nage == false){
             nage = true;
             manualImage.setAnchorPercent(5, 5);
+            gui->disable();
 
         } else {
             nage = false;
             manualImage.setAnchorPercent(0.05, 0.05);
-
+            gui->enable();
         }
     }
     
@@ -367,6 +385,18 @@ void testApp::keyReleased(int key){
     }
 }
 
+
+//--------------------------------------------------------------
+// ofxUIのイベント
+void testApp::guiEvent(ofxUIEventArgs &e)
+{
+    // 押したボタンを取得
+    int id = e.widget->getID();
+    serverIdGui = id / 3;
+    serverId = id / 2;
+}
+
+    
 //--------------------------------------------------------------
 void testApp::mouseMoved(int x, int y ){
 }
